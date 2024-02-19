@@ -1,0 +1,77 @@
+/* To import specific font from Google */
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400&display=swap');
+
+* {
+    box-sizing: border-box; /* That padding doesn't take up the width */
+    padding: 0;     /* To reset */
+    margin: 0;      /* To reset */
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;   /* To implement the imported font */
+    background: #fff;
+    color: #333;
+    line-height: 1.6;
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    color: #333;
+    text-decoration: none;
+}
+
+h1, h2 {
+    font-weight: 300;
+    line-height: 1.2;
+}
+
+p {
+    margin: 10px 0;
+}
+
+img {
+    width: 100%;    /* To have a width of 100 % of its container for all images */
+}
+
+/* Navbar */
+.navbar {
+    display: flex;
+    align-items: center;    /* Align along the cross axis (vertical axis) */
+    justify-content: space-between; /* Align along the main axis (horizontal axis) - space-between to have the logo on the one side and the ul on the other */
+    background-color: #333;
+    color: #fff;
+    opacity: 0.8;
+    width: 100%;    /* To have a width of 100 % of its container */
+    height: 70px;   /* This height is quite common for a navbar */
+    position: fixed;    /* To have it stick on the top */
+    top: 0px;   /* To have the navbar 0px from the top */
+    padding: 0 30px;
+    transition: 0.5s;   /* To have a transition between two states */
+}
+
+.navbar.top {
+    background: transparent;
+}
+
+.navbar a {
+    color: #fff;
+    padding: 10px 20px;
+    margin: 0 5px;
+}
+
+.navbar a:hover {
+    border-bottom: #28a745 2px solid;
+}
+
+.navbar ul {
+    display: flex;  /* To make the ul a flex container */
+}
+
+.navbar .logo {
+    font-weight: 400;   /* To make it more bold */
+}
+
+
