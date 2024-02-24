@@ -74,4 +74,45 @@ img {
     font-weight: 400;   /* To make it more bold */
 }
 
+/* Header */
+.hero {
+    background: url('../images/home/showcase.jpg') no-repeat center center/cover;
+    height: 100vh;
+    position: relative; /* The parrent element */
+    color: #fff;
+}
+
+.hero .content {
+    display: flex;  /* To have the content in a flex container */
+    flex-direction: column; /* This turns the main axis from horizontal to vertical - the main axis (horizontal axis) is now vertical */
+    align-items: center;    /* Align items horizontally - Align items along the cross axis (horizontal axis) */
+    justify-content: center;    /* Align items vertically - Align along the main axis (vertical) */
+    text-align: center;
+    height: 100%;   /* To have the height 100 % of its container (100vh) */
+    padding: 0 20px;    /* To don't have it rapped up on smaller screens */
+}
+
+.hero .content h1 {
+    font-size: 55px;    /* The Sky Is The Limit */
+}
+
+.hero .content p {
+    font-size: 23px;    /* We provide world class financial assistance */
+    max-width: 600px;   /* That it doesn't extend to much out */
+    margin: 20px 0 30px;    /* top  left/right  bottom */
+}
+
+.hero::before { /* To insert content (in this case an overlay that darkens the background image) before the element (.hero - Hero Header) */
+    content: '';    /* This property is needed */
+    position: absolute; /* The child element ogf .hero */
+    top: 0; /* Placement */
+    left: 0;    /* Placement */
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.6);
+}
+
+.hero * {   /* To select everything within .hero */
+    z-index: 10;    /* To have the content of the hero header in front of the overlay */
+}
 
