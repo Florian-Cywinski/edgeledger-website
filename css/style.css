@@ -116,3 +116,34 @@ img {
     z-index: 10;    /* To have the content of the hero header in front of the overlay */
 }
 
+.hero.blog {
+    background: url('../images/home/blog.jpg') no-repeat center center/cover;
+    height: 30vh;
+}
+
+/* Icons */
+.icons {
+    padding: 30px;
+}
+
+.icons h3 { /* nvestment Banking... */
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.icons i {  /* The fontawesome icons */
+    background-color: #28a745;
+    color: #fff;
+    padding: 1rem;
+    border-radius: 50%; /* To make the icons round */
+    margin-bottom: 15px;
+}
+
+.cases img:hover {
+    opacity: 0.7;
+}
+
+.team img {
+    border-radius: 50%;
+}
+

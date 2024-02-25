@@ -31,5 +31,81 @@
    background: #0284d0;
    color: #fff;
 }
+.btn-dark, .bg-dark {
+   background: #333;
+   color: #fff;
+}
+.btn-light, .bg-light {
+   background: #f4f4f4;
+   color: #333;
+}
 
+.btn-outline {
+    background: transparent;
+    border: 1px solid #fff;
+}
+
+/* Flex items  - For flex box rows*/
+.flex-items {
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    text-align: center;
+    height: 100%;
+}
+
+.flex-items > div { /* The direct div child */
+    padding: 20px;
+}
+
+/* Flex columns */
+.flex-columns.flex-reverse .row {
+    flex-direction: row-reverse;
+}
+
+.flex-columns .row {    /* To style the row of the flex-columns util. class */
+    display: flex;
+    flex-direction: row;    /* row is actually the default value */
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+.flex-columns .column { /* To style the column of the flex-columns util. class */
+    display: flex;
+    flex-direction: column;
+    flex-basis: 100%;
+    flex: 1;    /* To take up the entire height */
+}
+
+.flex-columns .column .column-1,
+.flex-columns .column .column-2 {
+    height: 100%;
+}
+
+.flex-columns img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;  /* It takes up the whole area without being streched out - It works similar to background size cover with the background image */
+}
+
+.flex-columns .column-2 {
+    display: flex;  /* To be able to align it */
+    flex-direction: column;
+    align-items: flex-start;    /* Horizontally (on the left side) */
+    justify-content: center;    /* Vertically (in the middle) */
+    padding: 30px;
+}
+
+.flex-columns h2 {
+    font-size: 40px;
+    font-weight: 100;
+}
+
+.flex-columns h4 {
+    margin-bottom: 10px;
+}
+
+.flex-columns p {
+    margin: 20px 0;
+}
 
