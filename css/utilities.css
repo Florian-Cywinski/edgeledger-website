@@ -59,7 +59,7 @@
 }
 
 /* Flex columns */
-.flex-columns.flex-reverse .row {
+.flex-columns.flex-reverse .row {   /* Tp have the text part pn the left side and the image on the right side */
     flex-direction: row-reverse;
 }
 
@@ -107,5 +107,37 @@
 
 .flex-columns p {
     margin: 20px 0;
+}
+
+/* Section header */
+.section-header {
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.section-header h2 {
+    font-size: 40px;
+    margin: 20px 0;
+}
+
+.section-padding {
+    padding: 20px 20px 40px;    /* Top  left/right  bottom */
+}
+
+/* Flex grid - 4 images in a row (4 columns) and in each column 2 images (8 at all) */
+.flex-grid .row {
+    display: flex;
+    flex-wrap: wrap;    /* To enable flex elements to be split into multiple lines  */
+    padding: 0 4px;
+}
+
+.flex-grid .column {
+    flex: 25%;  /* To have 25 % each (4 img next to each other) */
+    max-width: 25%; /* To make sure it doesn't go over it */
+    padding: 0 4px;
 }
 
