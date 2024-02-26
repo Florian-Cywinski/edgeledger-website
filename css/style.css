@@ -145,6 +145,59 @@ img {
 }
 
 .team img {
-    border-radius: 50%;
+    border-radius: 50%; /* To have rounded images */
+}
+
+/* Callback form */
+.callback-form {
+    width: 100%;    /* 100 % of its container */
+    padding: 20px 0;
+}
+
+.callback-form label {
+    display: block; /* The default for label is inline - block to have each label in a separat line */
+    margin-bottom: 5px;
+}
+
+.callback-form .form-control {  /* The label and the input */
+    margin-bottom: 15px;
+}
+
+.callback-form input {
+    width: 100%;
+    padding: 4px;
+    height: 40px;
+    border: #f5f5f5 1px solid;
+}
+
+.callback-form input:focus {
+    outline-color: #28a745; /* outline 0 to get rid of it */
+}
+
+.callback-form .btn {
+    padding: 12px 0;
+    margin-top: 20px;
+}
+
+/* Footer */
+.footer {
+    display: flex;
+    flex-direction: column; /* To have the social icons as columns to center these - social icons are in a row and the text "Copyright... is in the second row */
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    height: 200px;
+}
+
+.footer a { /* The social icons */
+    color: #fff;
+}
+
+.footer a:hover {
+    color: #28a745;
+}
+
+.footer .social > * {   /* To select everything within the .social div */
+    margin-right: 30px;
 }
 
