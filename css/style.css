@@ -201,3 +201,29 @@ img {
     margin-right: 30px;
 }
 
+/* Mobile - for a tablet or less */
+@media(max-width: 768px) {
+    .navbar {
+        flex-direction: column; /* Default for desctop pages is row */
+        height: 120px;  /* Because it has to be higher since now the logo and the links are not next to each other but among each other */
+        padding: 20px;
+    }
+
+    .navbar a {
+        padding: 10px 10px; /* From 10px 20px to have the links closer to each other */
+        margin: 0 3px;  /* From 0 5px */
+    }
+
+    .flex-items {
+        flex-direction: column; /* Default is row */
+    }
+
+    .flex-columns .column, .flex-grid .column {
+        flex: 100%; /* To set flex grow to 100 % - to set each column to 100 % width */
+        max-width: 100%;
+    }
+
+    .team img {
+        width: 70%; /* Default is 100 % */
+    }
+}
