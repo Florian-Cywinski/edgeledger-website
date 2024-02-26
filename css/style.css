@@ -49,11 +49,11 @@ img {
     position: fixed;    /* To have it stick on the top */
     top: 0px;   /* To have the navbar 0px from the top */
     padding: 0 30px;
-    transition: 0.5s;   /* To have a transition between two states */
+    transition: 0.5s;   /* To have a transition between two states (the bounce effect when scrolling from the top - the navbar goes up with transition from transparent to party transparent) */
 }
 
 .navbar.top {
-    background: transparent;
+    background: transparent;    /* To have the navbar transparent on top (without scrolling down) */
 }
 
 .navbar a {
@@ -116,7 +116,7 @@ img {
     z-index: 10;    /* To have the content of the hero header in front of the overlay */
 }
 
-.hero.blog {
+.hero.blog {    /* The backgroundimage for the blog page */
     background: url('../images/home/blog.jpg') no-repeat center center/cover;
     height: 30vh;
 }
@@ -177,6 +177,29 @@ img {
 .callback-form .btn {
     padding: 12px 0;
     margin-top: 20px;
+}
+
+/* Post page */
+.post {
+    padding: 50px 30px;
+}
+
+.post h2 {
+    font-size: 40px;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: #ccc solid 1px;  /* The underline */
+}
+
+.post .meta {
+    margin-bottom: 30px;
+}
+
+.post img {
+    width: 300px;
+    border-radius: 50%;
+    display: block; /* To be able to put it in the middle without using flex */
+    margin: 0 auto 30px;
 }
 
 /* Footer */

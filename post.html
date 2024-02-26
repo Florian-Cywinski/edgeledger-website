@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css"
+      integrity="sha256-h20CPZ0QyXlBuAw7A+KluUYx/3pK+c7lYEpqLTlxjYQ="
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="css/utilities.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <title>Post One</title>
+  </head>
+  <body id="home">
+    <header class="hero blog">
+      <div id="navbar" class="navbar top">
+        <h1 class="logo">
+          <span class="text-primary"><i class="fas fa-book-open"></i> Edge</span
+          >Ledger
+        </h1>
+        <nav>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="index.html#about">About</a></li>
+            <li><a href="index.html#cases">Cases</a></li>
+            <li><a href="index.html#blog">Blog</a></li>
+            <li><a href="index.html#contact">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
+
+      <div class="content">
+        <h1>Blog</h1>
+      </div>
+    </header>
+
+    <main>
+      <section class="post">
+        <h2>Blog Post One</h2>
+        <p class="meta">
+          <i class="fas fa-user"></i> Posted by <strong>John Doe</strong> |
+          April 23 2020
+        </p>
+        <img src="images/blog/blog1.jpg" alt="" />
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias illum,
+          animi earum ea amet sequi reiciendis sit corporis sunt iusto
+          cupiditate odio maxime adipisci cumque eligendi nemo dolore id itaque?
+        </p>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat
+          molestias, a perspiciatis facilis rerum praesentium nihil. Ratione at
+          ab ipsam facere deleniti, tempora libero! Excepturi, soluta laudantium
+          aliquid hic vitae ex quaerat aperiam eligendi aut temporibus mollitia
+          sapiente animi illum minus dicta fugiat non provident ad iste maxime!
+          Consequuntur, repudiandae maxime. Reprehenderit, commodi laudantium.
+          Voluptatibus dolorem in tenetur nostrum minus!
+        </p>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem voluptas
+          quibusdam nostrum dicta non vel nisi adipisci consequuntur molestiae
+          perspiciatis enim ipsum, illo molestias sequi dolor explicabo harum
+          laudantium soluta assumenda quidem quis dolorem. Nulla accusamus,
+          voluptate eos reiciendis aut obcaecati facilis assumenda dignissimos
+          neque dolore. Voluptates ut omnis velit?
+        </p>
+      </section>
+    </main>
+
+    <footer class="footer bg-dark">
+      <div class="social">
+        <a href="#"><i class="fab fa-facebook fa-2x"></i></a>
+        <a href="#"><i class="fab fa-twitter fa-2x"></i></a>
+        <a href="#"><i class="fab fa-youtube fa-2x"></i></a>
+        <a href="#"><i class="fab fa-linkedin fa-2x"></i></a>
+      </div>
+      <p>Copyright &copy; 2020 - EdgeLedger</p>
+    </footer>
+
+    <script>
+      // To have the navbar only transparent when the navbar is on the top
+      const navbar = document.getElementById('navbar'); // To grab the navbar by its id
+      let scrolled = false; // false if it wasn't scrolled yet
+
+      window.onscroll = function () { // window.onscroll is an event - to run a function when scrolling 
+        if (window.pageYOffset > 100) { // When 100px on the y axis was reached
+          navbar.classList.remove('top'); // To remove the class of top (with the transparent background)
+          // To have the bounce effect when scrolling down
+          if (!scrolled) {  // if it wasn't scrolled yet
+            navbar.style.transform = 'translateY(-70px)'; // To move the navbar along the y axis - to get pulled up by the hight of the navbar (70px)
+          }
+          // To bring the navbar back down (transformed from tranparent to partly transparent )
+          setTimeout(function () {
+            navbar.style.transform = 'translateY(0)'; // To bring the navbar back in its original position
+            scrolled = true;  // To set this to true (scrolled down flag)
+          }, 200);  // 200 ms
+        } else {  // For les than 100px on the y axis
+          navbar.classList.add('top');  // To add the class of top (with the transparent background)
+          scrolled = false; // To set this to false (scrolled down flag)
+        }
+      };
+    </script>
+  </body>
+</html>

@@ -3,6 +3,8 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- To bring in the favicon icon / image -->
+    <!-- <link rel="shortcut icon" type="image/x-icon" href="favicon.ico" /> -->
     <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
     <!-- To import the Fontawesome stylesheet -->
     <link
@@ -120,6 +122,8 @@
         </header>
         <div class="row">
           <div class="column">
+            <!-- The links are just for the overlay effect after click these (to overlay the clicked images on the current page (in  smaller widow with text)) - 
+              data-lightbox="cases" is an attribute to put all 8 images in the same group -->
             <a
               href="images/cases/cases1.jpg"
               data-lightbox="cases"
@@ -307,44 +311,54 @@
       <p>Copyright &copy; 2020 - EdgeLedger</p>
     </footer>
 
+    <!-- The following script is from https://releases.jquery.com/ (cdn (content delivery network)) (minified version) to bring in jquery for the Smooth Scrolling part 
+    jQuery is a free JavaScript library that provides functions for DOM navigation and manipulation -->
     <script
       src="https://code.jquery.com/jquery-3.5.0.min.js"
       integrity="sha256-xNzN2a4ltkB44Mc/Jz3pT4iU1cmeR0FkXs4pru/JxaQ="
       crossorigin="anonymous"
     ></script>
-    <script src="js/lightbox.min.js"></script>
-    <script>
-      const navbar = document.getElementById('navbar');
-      let scrolled = false;
 
-      window.onscroll = function () {
-        if (window.pageYOffset > 100) {
-          navbar.classList.remove('top');
-          if (!scrolled) {
-            navbar.style.transform = 'translateY(-70px)';
+    <!-- The following script is to have an overlay effect for the cases images when click on these (to overlay the clicked images on the current page (in  smaller widow with text)) - 
+      It's from https://lokeshdhakar.com/projects/lightbox2/ -> Github -> Code -> Download ZIP -> dist -> css -> lightbox.min.css and
+    -> js -> lightbox.min.js (it requires jquery as well) and -> images -> we have to copy and past these as well (loading.git, close.png...) -->
+    <script src="js/lightbox.min.js"></script>  
+
+    <script>
+      // To have the navbar only transparent when the navbar is on the top
+      const navbar = document.getElementById('navbar'); // To grab the navbar by its id
+      let scrolled = false; // false if it wasn't scrolled yet
+
+      window.onscroll = function () { // window.onscroll is an event - to run a function when scrolling 
+        if (window.pageYOffset > 100) { // When 100px on the y axis was reached
+          navbar.classList.remove('top'); // To remove the class of top (with the transparent background)
+          // To have the bounce effect when scrolling down
+          if (!scrolled) {  // if it wasn't scrolled yet
+            navbar.style.transform = 'translateY(-70px)'; // To move the navbar along the y axis - to get pulled up by the hight of the navbar (70px)
           }
+          // To bring the navbar back down (transformed from tranparent to partly transparent )
           setTimeout(function () {
-            navbar.style.transform = 'translateY(0)';
-            scrolled = true;
-          }, 200);
-        } else {
-          navbar.classList.add('top');
-          scrolled = false;
+            navbar.style.transform = 'translateY(0)'; // To bring the navbar back in its original position
+            scrolled = true;  // To set this to true (scrolled down flag)
+          }, 200);  // 200 ms
+        } else {  // For les than 100px on the y axis
+          navbar.classList.add('top');  // To add the class of top (with the transparent background)
+          scrolled = false; // To set this to false (scrolled down flag)
         }
       };
 
-      // Smooth Scrolling
-      $('#navbar a, .btn').on('click', function (e) {
-        if (this.hash !== '') {
+      // Smooth Scrolling (to don't jump directly to the part of the homepage after click on this specific link (e.g. "Cases" link)) - a jquery solution
+      $('#navbar a, .btn').on('click', function (e) { // $('#navbar a, .btn') to grab the navbar - .on('click' when click any link in the navbar
+        if (this.hash !== '') { // When any link in the navbar was clicked
           e.preventDefault();
 
-          const hash = this.hash;
+          const hash = this.hash; // To grab the hash of the clicked link (#home, #about...)
 
-          $('html, body').animate(
+          $('html, body').animate(  // Selects the html / body to animate this
             {
-              scrollTop: $(hash).offset().top - 100,
+              scrollTop: $(hash).offset().top - 100,  // - 100 that the fixed navbar doesn't cover it (e.g. "Cases" part of the homepage)
             },
-            800
+            800 // The duration of this animation
           );
         }
       });

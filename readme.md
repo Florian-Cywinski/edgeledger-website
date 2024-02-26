@@ -21,7 +21,7 @@ Development steps:
 
 7. Inner Pages
 
-8. NavBar & Lightbox Effects With JS
+8. NavBar & Lightbox Effects With JS (a jQuery solution)
 
 9. Adding a Favicon
 
